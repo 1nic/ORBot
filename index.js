@@ -39,13 +39,13 @@ client.on('message', message => {
 		}
 	}
 	if (cmdName.toLowerCase() == 'ban'){
-		command.execute(message)
+		client.commands.get('ban').execute(message);
 	}
 	if (cmdName.toLowerCase() == 'unban'){
-		command.execute(message, args)
+		client.commands.get('unban').execute(message, args);
 	}
 	if (cmdName.toLowerCase() == 'kick'){
-		command.execute(message)
+		client.commands.get('kick').execute(message);
 	}
 });
 
