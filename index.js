@@ -22,12 +22,16 @@ client.on('message', message => {
 
 client.on("message", function(message){
 	if (message.content === "nic is gay"){
+		client.user.username = "Announcement Bot (nicolas's fan)"
 		message.channel.send("no.");
 	} else if (message.content == "bruno is gay"){
+		client.user.username = "Announcement Bot (bruno's fan)"
 		message.channel.send("no.");
 	} else if (message.content == "ismael is gay"){
+		client.user.username = "Announcement Bot (ismael's fan)"
 		message.channel.send("no.");
 	}
 });
+
 
 client.login(process.env.token);
