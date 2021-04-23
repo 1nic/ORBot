@@ -42,7 +42,7 @@ client.on('message', message => {
 		client.commands.get('ban').execute(message);
 	}
 	if (cmdName.toLowerCase() == 'unban'){
-		client.commands.get('unban').execute(message, args);
+		command.execute(message, args);
 	}
 	if (cmdName.toLowerCase() == 'kick'){
 		client.commands.get('kick').execute(message);
