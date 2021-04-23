@@ -41,7 +41,7 @@ client.on("message", function(message){
 		message.channel.send("no.");
 	} else if (message.content == "bruno is gay"){
 		client.user.username = "Announcement Bot (bruno's fan)"
-		client.commands.get('ping').execute(message, args);
+		client.commands.get('ping').execute(message);
 	} else if (message.content == "ismael is gay"){
 		client.user.username = "Announcement Bot (ismael's fan)"
 		message.channel.send("no.");
