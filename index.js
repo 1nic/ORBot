@@ -30,7 +30,7 @@ client.on('message', message => {
 	}
 	if (cmdName === "avatar"){
 		if (!message.mentions.users.size){
-			client.commands.get('avatar').execute()
+			client.commands.get('ping').execute(message);
 		}
 	}
 });
