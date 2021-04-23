@@ -27,9 +27,10 @@ client.on('message', message => {
 		if (!message.mentions.users.size){
 			return message.reply('you didnt mention anyone, how i am supossed to kick?');
 		}
-	} else if (cmdName === "avatar"){
+	}
+	if (cmdName === "avatar"){
 		if (!message.mentions.users.size){
-			client.commands.get(cmdName).execute(message);
+			command.execute(message);
 		}
 	}
 });
