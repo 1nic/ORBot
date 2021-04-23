@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'av',
-	description: 'Ping!',
+	description: 'avatar',
 	execute(message) {
-		message.channel.send('yep.');
+		message.send(`${message.author.tag}'s avatar:`, {files: message.author.displayAvatarURL({format : 'png', dynamic : true})});
 	},
 };

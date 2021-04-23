@@ -29,7 +29,9 @@ client.on('message', message => {
 		}
 	}
 	if (cmdName === "avatar"){
-		client.commands.get('av').execute(message);
+		if (!message.mentions.users.size){
+			client.commands.get('av').execute(message);	
+		}
 	}
 });
 
