@@ -26,6 +26,11 @@ client.on('message', message => {
 	} else if (cmdName === 'kick') {
 		if (!message.mentions.users.size){
 			return message.reply('you didnt mention anyone, how i am supossed to kick?');
+		} else {
+			if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('LMAO...');
+			const vicToKick = message.mentions.members.first();
+			if(vicToKick.id == message.author.id) return message.reply('thats stupid af, y would you kick yourself?');
+			client.command.get('kick').execute(message, vicToKick);
 		}
 	}
 	if (cmdName === "avatar"){
