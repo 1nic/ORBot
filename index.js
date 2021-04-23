@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
-const prefix = "or ";
+const prefix = "or "
 const client = new Discord.Client();
 
 client.once('ready', () => {
-	console.log('The bot is ready');
+	console.log(`${client.user.username} is online.`);
 });
 
 client.on('message', message => {
@@ -17,6 +17,16 @@ client.on('message', message => {
 		channel.send(context);
 	} else if (command === 'beep') {
 		message.channel.send('Boop.');
+	}
+});
+
+client.on("message", function(message){
+	if (message.content === "nic is gay"){
+		message.channel.send("no.");
+	} else if (message.content == "bruno is gay"){
+		message.channel.send("no.");
+	} else if (message.content == "ismael is gay"){
+		message.channel.send("no.");
 	}
 });
 
