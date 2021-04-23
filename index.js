@@ -29,7 +29,7 @@ client.on('message', message => {
 		}
 	} else if (cmdName === "avatar"){
 		if (!message.mentions.users.size){
-			return message.reply(`${message.author.tag}'s avatar: ${message.author.displayAvatarURL({format : 'png', dynamic : true})}`);
+			command.execute(message);
 		}
 	}
 });
