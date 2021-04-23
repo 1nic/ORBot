@@ -37,14 +37,13 @@ client.on('message', message => {
 
 client.on("message", function(message){
 	if (message.content === "nic is gay"){
-		client.user.username = "Announcement Bot (nicolas's fan)"
-		message.channel.send("no.");
+		client.commands.get('msgc').execute(message, "no");
 	} else if (message.content == "bruno is gay"){
-		client.user.username = "Announcement Bot (bruno's fan)"
-		client.commands.get('ping').execute(message);
+		client.commands.get('msgc').execute(message, "fr, ngl, no cap.");
 	} else if (message.content == "ismael is gay"){
-		client.user.username = "Announcement Bot (ismael's fan)"
-		message.channel.send("no.");
+		client.commands.get('msgc').execute(message, "do you want to be banned?");
+	} else if (message.content == "shadow is gay"){
+		client.commands.get('msgc').execute(message, "shut plz");
 	}
 });
 
