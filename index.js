@@ -47,6 +47,9 @@ client.on('message', message => {
 	if (cmdName.toLowerCase() == 'kick'){
 		client.commands.get('kick').execute(message);
 	}
+	if (command){
+		command.run(client, message, args);
+	}
 });
 
 client.on("message", function(message){
