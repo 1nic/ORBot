@@ -21,9 +21,9 @@ client.on('message', message => {
 	const args = message.content.slice("or ".length).trim().split(/ +/);
 	const cmdName = args.shift().toLowerCase();
 	const command = client.commands.get(cmdName);
-	if (cmdName === 'ann') {
+	if (cmdName.toLowerCase() === 'ann') {
 		command.execute(message, client);
-	} else if (cmdName === 'kick') {
+	} else if (cmdName.toLowerCase() === 'kick') {
 		if (!message.mentions.users.size){
 			return message.reply('you didnt mention anyone, how i am supossed to kick?');
 		} else {
@@ -33,23 +33,37 @@ client.on('message', message => {
 			command.execute(message, vicToKick);
 		}
 	}
-	if (cmdName === "avatar"){
+	if (cmdName.toLowerCase() === "avatar"){
 		if (!message.mentions.users.size){
 			client.commands.get('av').execute(message);	
 		}
+	}
+	if (cmdName.toLowerCase() == 'ban'){
+		if (!message.mentions.users.size){
+			return message.reply('you want to ban the null?');
+		}
+		if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('go get ban perms and then do the command again, kiddo.')
+
 	}
 });
 
 client.on("message", function(message){
 	if (message.content === "nic is gay"){
 		client.commands.get('msgc').execute(message, "no");
-	} else if (message.content == "bruno is gay"){
+	} else if (message.content.toLocaleLowerCase() === "bruno is gay"){
 		client.commands.get('msgc').execute(message, "fr, ngl, no cap.");
-	} else if (message.content == "ismael is gay"){
+	} else if (message.content.toLocaleLowerCase() === "ismael is gay"){
 		client.commands.get('msgc').execute(message, "do you want to be banned?");
-	} else if (message.content == "shadow is gay"){
+	} else if (message.content.toLocaleLowerCase() === "shadow is gay"){
 		client.commands.get('msgc').execute(message, "shut plz");
 	}
 });
+
+client.on('message', function(message){
+	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+	if (!prefixRegex.test(message.content)) return;
+
+	message.channel.send('whats up? prefix: or')
+})
 
 client.login(process.env.token);
