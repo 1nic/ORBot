@@ -6,5 +6,6 @@ module.exports = {
 		const context = args.join(" ").toLowerCase();
 		const channel = client.channels.cache.find(ch => ch.id === '828358344413937675');
 		channel.send(context);
+		console.log("f")
 	},
 };
