@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'unban',
-	description: 'ban',
+	description: 'unban',
 	run: async(message, args) => {
 		if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('go get ban perms and then do the command again, kiddo.');
 		const id = args[1]

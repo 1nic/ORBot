@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'kick',
-	description: 'ban',
+	description: 'kick',
 	execute(message) {
 		if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('go get kick perms and then do the command again, kiddo.');
 		if (!message.mentions.members.first()) return message.reply('you want to kick the null?');
