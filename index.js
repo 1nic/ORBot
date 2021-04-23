@@ -60,9 +60,9 @@ client.on("message", function(message){
 });
 
 client.on('message', function(message){
-	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
+	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
 	if (!prefixRegex.test(message.content)) return;
-
+	
 	message.channel.send('whats up? prefix: or')
 })
 
