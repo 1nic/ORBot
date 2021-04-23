@@ -5,6 +5,6 @@ module.exports = {
 		vic.kick({
             reason: "joe mama"
         });
-        message.channel.send(`${vic.name} were kicked.`);
+        message.channel.send(`${vic} were kicked.`);
 	},
 };
