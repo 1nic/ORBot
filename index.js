@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
 const prefix = "or "
 const client = new Discord.Client();
-const fs = require('fs');
-const commands = fs.reddirAsync('./commands').filter(file => file.endsWith('.js'));
+const commands = require('./commands');
 
 client.once('ready', () => {
 	console.log(`${client.user.username} is online.`);
@@ -31,10 +30,6 @@ client.on('message', message => {
 	} else if (command === "avatar"){
 		if (!message.mentions.users.size){
 			return message.reply(`${message.author.tag}'s avatar: ${message.author.displayAvatarURL({format : 'png', dynamic : true})}`);
-
-			const avatarP = message.mentions.users.map(function(user){
-				return (`${user.username}'s avatar: ${user.displayAvatarURL({ format: 'png', dynamic: 'true'})}`);
-			});
 
 			message.channel.send(avatarP);
 			client.commands.get('avatar').execute(message, args);
