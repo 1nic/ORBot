@@ -1,13 +1,19 @@
 const Discord = require('discord.js');
 const prefix = "or "
 const client = new Discord.Client();
+const fs = require('fs');
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 client.once('ready', () => {
 	console.log(`${client.user.username} is online.`);
 });
 
-client.commands = new Discord.Collection();
-client.commands.set("avatar", require('./commands/avatar'));
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+
+	client.commands.set(command.name, command);
+}
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -25,9 +31,6 @@ client.on('message', message => {
 	} else if (command === "avatar"){
 		if (!message.mentions.users.size){
 			return message.reply(`${message.author.tag}'s avatar: ${message.author.displayAvatarURL({format : 'png', dynamic : true})}`);
-
-			message.channel.send(avatarP);
-			client.commands.get('avatar').execute(message, args);
 		}
 	}
 });
@@ -38,7 +41,7 @@ client.on("message", function(message){
 		message.channel.send("no.");
 	} else if (message.content == "bruno is gay"){
 		client.user.username = "Announcement Bot (bruno's fan)"
-		message.channel.send("no.");
+		client.commands.get('ping').execute(message, args);
 	} else if (message.content == "ismael is gay"){
 		client.user.username = "Announcement Bot (ismael's fan)"
 		message.channel.send("no.");
