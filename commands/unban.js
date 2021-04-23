@@ -1,5 +1,5 @@
 module.exports = {
-	name: 'ban',
+	name: 'unban',
 	description: 'ban',
 	run: async(message, args) => {
 		if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('go get ban perms and then do the command again, kiddo.');
