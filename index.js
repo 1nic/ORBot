@@ -30,7 +30,7 @@ client.on('message', message => {
 			if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('LMAO...');
 			const vicToKick = message.mentions.members.first();
 			if(vicToKick.id == message.author.id) return message.reply('thats stupid af, y would you kick yourself?');
-			client.command.get('kick').execute(message, vicToKick);
+			command.execute(message, vicToKick);
 		}
 	}
 	if (cmdName === "avatar"){
