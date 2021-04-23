@@ -3,8 +3,8 @@ module.exports = {
 	description: 'announcement',
 	execute(message, client) {
         const args = message.content.slice("or ".length).trim().split(/ +/);
-		const context = args.join(" ", "ann").toLowerCase();
+		const context = args.join(" ").toLowerCase().split(/ ann/);
 		const channel = client.channels.cache.find(ch => ch.id === '828358344413937675');
-		channel.send(context);
+		channel.send(real);
 	},
 };
