@@ -39,11 +39,13 @@ client.on('message', message => {
 		}
 	}
 	if (cmdName.toLowerCase() == 'ban'){
-		if (!message.mentions.users.size){
-			return message.reply('you want to ban the null?');
-		}
-		if (!message.member.permissions.has('BAN_MEMBERS')) return message.reply('go get ban perms and then do the command again, kiddo.')
-
+		command.execute(message)
+	}
+	if (cmdName.toLowerCase() == 'unban'){
+		command.execute(message, args)
+	}
+	if (cmdName.toLowerCase() == 'kick'){
+		command.execute(message)
 	}
 });
 
@@ -62,7 +64,7 @@ client.on("message", function(message){
 client.on('message', function(message){
 	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
 	if (!prefixRegex.test(message.content)) return;
-	
+
 	message.channel.send('whats up? prefix: or')
 })
 
