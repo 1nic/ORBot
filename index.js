@@ -30,8 +30,8 @@ client.on('message', message => {
 	}
 	if (cmdName === "avatar"){
 		if (!message.mentions.users.size){
-			if (!command){return message.channel.send("error")};
-			command.execute(message);
+			if (!command.execute(message)){return message.channel.send("error")};
+			message.channel.send("pgo")
 		}
 	}
 });
