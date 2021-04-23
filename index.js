@@ -1,10 +1,19 @@
 const Discord = require('discord.js');
 const prefix = "or "
 const client = new Discord.Client();
+const fs = require('fs');
+const commands = fs.reddirAsync('./commands').filter(file => file.endsWith('.js'));
 
 client.once('ready', () => {
 	console.log(`${client.user.username} is online.`);
 });
+
+client.commands = new Discord.Collection();
+
+for (const file of commands){
+	const command = require(`./commands ${file}`);
+	client.commands.set(command.name, command);
+}
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -15,8 +24,21 @@ client.on('message', message => {
 	if (command === 'ann') {
 		const channel = client.channels.cache.find(ch => ch.id === '828358344413937675');
 		channel.send(context);
-	} else if (command === 'beep') {
-		message.channel.send('Boop.');
+	} else if (command === 'kick') {
+		if (!message.mentions.users.size){
+			return message.reply('you didnt mention anyone, how i am supossed to kick?');
+		}
+	} else if (command === "avatar"){
+		if (!message.mentions.users.size){
+			return message.reply(`${message.author.tag}'s avatar: ${message.author.displayAvatarURL({format : 'png', dynamic : true})}`);
+
+			const avatarP = message.mentions.users.map(function(user){
+				return (`${user.username}'s avatar: ${user.displayAvatarURL({ format: 'png', dynamic: 'true'})}`);
+			});
+
+			message.channel.send(avatarP);
+			client.commands.get('avatar').execute(message, args);
+		}
 	}
 });
 
