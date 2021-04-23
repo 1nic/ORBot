@@ -22,7 +22,7 @@ client.on('message', message => {
 	const cmdName = args.shift().toLowerCase();
 	const command = client.commands.get(cmdName);
 	if (cmdName === 'ann') {
-		command.execute(message);
+		command.execute(message, client);
 	} else if (cmdName === 'kick') {
 		if (!message.mentions.users.size){
 			return message.reply('you didnt mention anyone, how i am supossed to kick?');
