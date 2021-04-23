@@ -1,18 +1,13 @@
 const Discord = require('discord.js');
 const prefix = "or "
 const client = new Discord.Client();
-const commands = require('./commands');
 
 client.once('ready', () => {
 	console.log(`${client.user.username} is online.`);
 });
 
 client.commands = new Discord.Collection();
-
-for (const file of commands){
-	const command = require(`./commands ${file}`);
-	client.commands.set(command.name, command);
-}
+client.commands.set("avatar", require('./commands/avatar'));
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
