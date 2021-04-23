@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(`**${message.author.tag}** you dont have permission to do that`);
-	const args = message.content.slice("or ".length).trim().split(/ +/, "ann");
+	const args = message.content.slice("or ".length).trim().split(/ +/);
 	const cmdName = args.shift().toLowerCase();
 	const command = client.commands.get(cmdName);
 	if (cmdName === 'ann') {
