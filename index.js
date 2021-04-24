@@ -61,6 +61,8 @@ client.on("message", function(message){
 		client.commands.get('msgc').execute(message, "do you want to be banned?");
 	} else if (message.content.toLocaleLowerCase() === "shadow is gay"){
 		client.commands.get('msgc').execute(message, "shut plz");
+	} else if (message.content.toLocaleLowerCase() === "zap is gay"){
+		client.commands.get('msgc').execute(message, "stop it is getting annoying");
 	}
 });
 
