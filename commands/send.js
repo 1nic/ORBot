@@ -1,9 +1,9 @@
 const {Client, Message, MessageEmbed} = require('discord.js');
 
 const poss = [
-    '1' = 'a',
-    '2' = 'stfu',
-    '3' = 'b'
+    '1',
+    '2',
+    '3'
 ]
 
 module.exports = {
