@@ -5,6 +5,14 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
+const msgarray = [
+	'nic is gay',
+	'bruno is gay',
+	'zap is gay',
+	'chris is gay',
+	'ismael is gay'
+]
+
 client.once('ready', () => {
 	console.log(`${client.user.username} is online.`);
 });
@@ -44,16 +52,8 @@ client.on('message', message => {
 });
 
 client.on("message", function(message){
-	if (message.content === "nic is gay"){
-		client.commands.get('msgc').execute(message, "no");
-	} else if (message.content.toLocaleLowerCase() === "bruno is gay"){
-		client.commands.get('msgc').execute(message, "fr, ngl, no cap.");
-	} else if (message.content.toLocaleLowerCase() === "ismael is gay"){
-		client.commands.get('msgc').execute(message, "do you want to be banned?");
-	} else if (message.content.toLocaleLowerCase() === "shadow is gay"){
-		client.commands.get('msgc').execute(message, "shut plz");
-	} else if (message.content.toLocaleLowerCase() === "zap is gay"){
-		client.commands.get('msgc').execute(message, "stop it is getting annoying");
+	if (msgarray[message.content]){
+		client.commands.get('send').run(message);
 	}
 });
 
