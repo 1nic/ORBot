@@ -45,7 +45,7 @@ client.on('message', message => {
 		command.run(message, args);
 	}
 	if (cmdName.toLowerCase() == 'kick'){
-		client.commands.get('kick').execute(message);
+		client.commands.get('kick').run(message);
 	}
 	if (!command == "ban"){
 		command.run(client, message, args);
