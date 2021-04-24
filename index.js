@@ -52,7 +52,7 @@ client.on('message', message => {
 });
 
 client.on("message", function(message){
-	if (msgarray[message.content]){
+	if (message.content === msgarray[1, 2, 3, 4, 5]){
 		client.commands.get('send').run(message);
 	}
 });
