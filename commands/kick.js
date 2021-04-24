@@ -16,7 +16,7 @@ module.exports = {
 		const channel = client.channels.cache.find(ch => ch.id === '834078274770042921');
         message.channel.send(`${member} were kicked for ${reason}.`);
 		const embedMessage = new MessageEmbed()
-		.setTitle(`${message.author.tag} kicked ${member}`)
+		.setTitle(`${message.author.tag} kicked ${member.user.tag}`)
 		.setColor('FF0000')
 		.setThumbnail(message.author.displayAvatarURL({format : 'png', dynamic : true}))
 		.addField('Reason: ', [
