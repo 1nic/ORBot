@@ -51,9 +51,11 @@ client.on('message', message => {
 	}
 });
 
-client.on("message", function(message){
-	if (message.content === msgarray[1, 2, 3, 4, 5]){
-		client.commands.get('send').run(message);
+client.on("message", function(message){ 
+	if (msgarray.find(value => value = message.content)){
+		const val = msgarray.find(value => value = message.content);
+		if (!val) return message.channel.send('error.');
+		message.channel.send(val);
 	}
 });
 
