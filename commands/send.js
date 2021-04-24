@@ -13,6 +13,7 @@ module.exports = {
         const max = 3
         const rand = Math.floor(Math.random() * max)
         if (!message.content == 'nic is gay') return message.channel.send(poss[rand]);
+        if (!message.content) return;
         message.channel.send(poss[4]);
     }
 }
