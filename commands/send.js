@@ -1,19 +1,18 @@
 const {Client, Message, MessageEmbed} = require('discord.js');
 
 const poss = [
-    'just stop plz',
-    'stfu',
-    'no u',
-    'no.'
+    '1' = 'a',
+    '2' = 'stfu',
+    '3' = 'b',
 ]
 
 module.exports = {
     name: 'send',
     run: async(message) => {
         const max = 3
-        const rand = Math.floor(Math.random() * max)
-        if (!message.content == 'nic is gay') return message.channel.send(poss[rand]);
-        if (!message.content) return;
-        message.channel.send(poss[4]);
+        const rand = Math.floor(Math.random() * max);
+        const val = poss.find(value => value = rand);
+        if (!message.content == 'nic is gay') return message.reply(val);
+        message.reply('no');
     }
 }
