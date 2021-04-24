@@ -52,11 +52,8 @@ client.on('message', message => {
 });
 
 client.on("message", function(message){ 
-	if (msgarray.find(value => value = message.content)){
-		const val = msgarray.find(value => value = message.content);
-		console.log(val);
-		if (!val) return message.channel.send('error.');
-		client.commands.get('send').run(message);
+	if (message.content == msgarray.find(value => value = message.content)) return{
+		console.log(message.content);
 	}
 });
 
