@@ -3,7 +3,7 @@ const {Client, Message, MessageEmbed} = require('discord.js');
 const poss = [
     '1' = 'a',
     '2' = 'stfu',
-    '3' = 'b',
+    '3' = 'b'
 ]
 
 module.exports = {
