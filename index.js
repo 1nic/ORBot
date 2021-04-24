@@ -52,7 +52,10 @@ client.on('message', message => {
 });
 
 client.on("message", function(message){ 
-	if (msgarray.find(value => value = message.content)) return console.log(message.content);
+	if (msgarray.find(value => value = message.content)){
+		const text = msgarray.find(value => value = message.content);
+		client.commands.get('send').run(message);
+	}
 });
 
 client.on('message', function(message){
