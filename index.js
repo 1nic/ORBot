@@ -23,16 +23,7 @@ client.on('message', message => {
 	const command = client.commands.get(cmdName);
 	if (cmdName.toLowerCase() === 'ann') {
 		command.execute(message, client);
-	} else if (cmdName.toLowerCase() === 'kick') {
-		if (!message.mentions.users.size){
-			return message.reply('you didnt mention anyone, how i am supossed to kick?');
-		} else {
-			if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('LMAO...');
-			const vicToKick = message.mentions.members.first();
-			if(vicToKick.id == message.author.id) return message.reply('thats stupid af, y would you kick yourself?');
-			command.execute(message, vicToKick);
-		}
-	}
+	} 
 	if (cmdName.toLowerCase() === "avatar"){
 		if (!message.mentions.users.size){
 			client.commands.get('av').execute(message);	
