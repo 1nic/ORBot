@@ -11,5 +11,5 @@ module.exports = {
 		const context = pre.split('ann');
 		const reason = context.slice(2).join(' ') || 'none';
 		member.kick({ reason });
-        message.channel.send(`${member} were banned for ${reason}.`);
+        message.channel.send(`${member} were kicked for ${reason}.`);
 }}
