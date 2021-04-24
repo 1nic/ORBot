@@ -11,7 +11,7 @@ module.exports = {
 		const args = message.content.slice("or ".length).trim().split(/ +/);
 		const pre = args.join(" ").toLowerCase();
 		const context = pre.split('ann');
-		const reason = context.slice(2).join(' ') || 'none';
+		const reason = context.slice(3).join(' ') || 'none';
 		member.kick({ reason });
 		const channel = client.channels.cache.find(ch => ch.id === '834078274770042921');
         message.channel.send(`${member} were kicked for ${reason}.`);
