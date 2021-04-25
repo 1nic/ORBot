@@ -38,6 +38,9 @@ client.on('message', message => {
 	const command = client.commands.get(cmdName);
 	if (!command) return;
 	command.run(client, message, args);
+	if (message.content === "epic") {
+		client.commands.get('epic').run(client, message, args);
+	}
 });
 
 client.on('message', function(message){
