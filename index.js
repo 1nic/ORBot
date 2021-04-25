@@ -29,26 +29,8 @@ client.on('message', message => {
 	const args = message.content.slice("or ".length).trim().split(/ +/);
 	const cmdName = args.shift().toLowerCase();
 	const command = client.commands.get(cmdName);
-	if (cmdName.toLowerCase() === 'ann') {
-		command.execute(message, client);
-	} 
-	if (cmdName.toLowerCase() === "avatar"){
-		if (!message.mentions.users.size){
-			client.commands.get('av').execute(message);	
-		}
-	}
-	if (cmdName.toLowerCase() == 'ban'){
-		client.commands.get('ban').execute(message);
-	}
-	if (cmdName.toLowerCase() == 'unban'){
-		command.run(message, args);
-	}
-	if (cmdName.toLowerCase() == 'kick'){
-		client.commands.get('kick').run(message, client);
-	}
-	if (!command == "ban"){
-		command.run(client, message, args);
-	}
+	if (!command) return;
+	command.run(client, message, args);
 });
 
 client.on("message", function(message){ 
