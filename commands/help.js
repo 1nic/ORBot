@@ -10,17 +10,17 @@ module.exports = {
         .setAuthor('prefix: or')
         .setThumbnail('https://cdn.discordapp.com/attachments/835130113599209473/835836212714668052/Omniversal_Administrative.png')
         .addField('Announcement', [
-            'CmdName = ann'
+            'ann: Announce something in <#828358344413937675>'
         ])
         .addField('Avatar', [
-            'CmdName = av'
+            'av: send the user avatar'
         ])
         .addField('Moderation', [
-            'CmdName = kick',
-            'CmdName = ban'
+            'kick: = kicks the user',
+            'ban: bans the user'
         ])
         .addField('Others', [
-            'CmdName = clear',
+            'clear: clear the amount of messages which the user sent',
         ])
         message.channel.send(embed);
     }
