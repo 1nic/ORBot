@@ -51,7 +51,7 @@ client.on('message', message => {
 	const args = message.content.trim().split(/ +/)
 	const otherName = message.content;
 	const other = client.othercommands.get(otherName);
-	if (!other) return console.log('joe mamar') ;
+	if (!other) return;
 	other.run(client, message, args);
 })
 
