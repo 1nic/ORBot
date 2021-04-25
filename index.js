@@ -15,6 +15,13 @@ const msgarray = [
 
 client.once('ready', () => {
 	console.log(`${client.user.username} is online.`);
+	client.user.setPresence({
+		activity: {
+			name: 'Ben 10: Omniversal Revenge',
+			type: 'WATCHING'
+		},
+		status: 'idle'
+	})
 });
 
 for (const file of commandFiles) {
