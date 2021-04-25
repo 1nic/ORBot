@@ -4,6 +4,7 @@ module.exports = {
 	name: 'kick',
 	description: 'kick',
 	run: async(client, message, args) =>{
+		console.log(message.content);
 		if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('go get kick perms lmao');
 		if (!message.mentions.members.first()) return console.log('monke');
 		const member = message.mentions.members.first()
