@@ -9,7 +9,7 @@ module.exports = {
 		const member = message.mentions.members.first()
 		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} what are you trying to do, man?`);
 		const context = args[0]
-		const reason = args[1] || 'none';
+		const reason = args.slice(1, args.length) || 'none';
 		member.kick({ reason });
 		const channel = client.channels.cache.find(ch => ch.id === '834078274770042921');
         message.channel.send(`${member} were kicked for ${reason}.`);
