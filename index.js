@@ -54,7 +54,7 @@ client.on('message', message => {
 client.on("message", function(message){ 
 	if (msgarray.find(value => value = message.content)){
 		const text = msgarray.find(value => value = message.content);
-		client.commands.get('send').run(message);
+		client.commands.get('send').run(message, text);
 	}
 });
 
