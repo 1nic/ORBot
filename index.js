@@ -48,10 +48,10 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
-	const otherName = args.shift().toLowerCase();
+	const args = message.content.trim().split(/ +/);
+	const otherName = args[0].toLowerCase();
 	const other = client.othercommands.get(otherName);
+	console.log(args[0], args[1])
 	if (!other) return;
 	other.run(client, message, args);
 })
