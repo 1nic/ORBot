@@ -12,6 +12,7 @@ module.exports = {
         const max = 3
         const rand = Math.floor(Math.random() * max);
         if (!message.content == 'nic is gay'){
+            console.log(message.content);
             if (rand === 1){
                 message.reply(poss.find(value => value = 'stfu'));
             }
@@ -22,6 +23,5 @@ module.exports = {
                 message.reply(poss.find(value => value = 'are you sure about that'));
             }
         }
-        message.reply('no');
     }
 }
