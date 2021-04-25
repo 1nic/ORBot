@@ -40,6 +40,12 @@ client.on('message', message => {
 	command.run(client, message, args);
 });
 
+client.on('message', message => {
+	if (message.content == "epic") {
+		message.channel.send('epnic, use the correct grammar')
+	}
+})
+
 client.on('message', function(message){
 	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
 	if (!prefixRegex.test(message.content)) return;
