@@ -1,8 +1,6 @@
 module.exports = {
     name: 'real',
     run: async(client, message, args) => {
-       if (args.includes('real')) {
-         console.log('should');
-       }
+       if (!args.indexOf('real') == -1) return console.log('yeaj')
     }
 }
