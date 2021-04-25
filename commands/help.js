@@ -16,7 +16,7 @@ module.exports = {
             'av: send the user avatar'
         ])
         .addField('Moderation', [
-            'kick: = kicks the user',
+            'kick: kicks the user',
             'ban: bans the user'
         ])
         .addField('Others', [
