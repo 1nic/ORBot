@@ -36,12 +36,14 @@ client.on('message', message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const cmdName = args.shift().toLowerCase();
 	const command = client.commands.get(cmdName);
-	if (message.content === "epic") {
-		client.commands.get('epic').run(client, message, args);
-	}
 	if (!command) return;
 	command.run(client, message, args);
 });
+
+client.on('message', message => {
+	if (!message.content == "epic") return;
+	message.channel.send('epnic, use the correct grammar');
+})
 
 client.on('message', function(message){
 	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
