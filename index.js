@@ -33,13 +33,6 @@ client.on('message', message => {
 	command.run(client, message, args);
 });
 
-client.on("message", function(message){ 
-	if (msgarray.find(value => value = message.content)){
-		const text = 'no u';
-		client.commands.get('send').run(message, text);
-	}
-});
-
 client.on('message', function(message){
 	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
 	if (!prefixRegex.test(message.content)) return;
