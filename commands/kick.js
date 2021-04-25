@@ -5,7 +5,7 @@ module.exports = {
 	description: 'kick',
 	run: async(client, message, args) =>{
 		if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('go get kick perms lmao');
-		const member = message.mentions.members.first()
+		const member = message.mentions.members.size
 		if (!member) return console.log("something is wrong, dude.");
 		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} what are you trying to do, man?`);
 		const context = args[0]
