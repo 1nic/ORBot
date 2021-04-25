@@ -51,7 +51,7 @@ client.on('message', message => {
 	const args = message.content.trim().split(/ +/);
 	const otherName = args[0].toLowerCase();
 	const other = client.othercommands.get(otherName);
-	console.log(args[0], args[1])
+	console.log(args[0]);
 	if (!other) return;
 	other.run(client, message, args);
 })
