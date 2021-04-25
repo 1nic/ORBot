@@ -20,7 +20,7 @@ client.once('ready', () => {
 			name: 'Ben 10: Omniversal Revenge',
 			type: 'WATCHING'
 		},
-		status: 'idle'
+		status: 'dnd'
 	})
 });
 
