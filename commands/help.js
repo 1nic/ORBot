@@ -5,7 +5,7 @@ module.exports = {
     description: "yeah",
     run: async(client, message, args) => {
         const embed = new MessageEmbed()
-        .setTitle('Omniversal Revenge bot')
+        .setTitle('Omniversal Revenge Bot')
         .setColor('RED')
         .setAuthor('prefix: or')
         .setThumbnail('https://cdn.discordapp.com/attachments/835130113599209473/835836212714668052/Omniversal_Administrative.png')
