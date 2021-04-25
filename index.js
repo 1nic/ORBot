@@ -48,7 +48,6 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	const args = message.content.trim().split(/ +/);
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const other = client.othercommands.get(otherName);
 	console.log(args[0], otherName);
