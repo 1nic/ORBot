@@ -23,7 +23,7 @@ module.exports = {
 			reason
 		])
 		console.log(`reason: ${reason}`);
-		console.log(`arg = ${args[0]}`);
+		console.log(`arg = ${args[2]}`);
 		if (!reason) return;
 		channel.send(embedMessage)
 }}
