@@ -41,8 +41,9 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	if (!message.content == "epic") return;
-	message.channel.send('epnic, use the correct grammar');
+	if (message.content == "epic") {
+		message.channel.send('epnic, use the correct grammar')
+	}
 })
 
 client.on('message', function(message){
