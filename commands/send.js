@@ -9,6 +9,6 @@ const poss = [
 module.exports = {
     name: 'send',
     run: async(message, text) => {
-       message.channel.send(text, {files: ['./gay.png']})
+       message.channel.send(text, {files: ['gay.png']})
     }
 }
