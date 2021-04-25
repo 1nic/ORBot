@@ -7,6 +7,7 @@ module.exports = {
 		console.log(message.content);
 		if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('go get kick perms lmao');
 		const member = message.mentions.members.first()
+		if (!member) return message.reply('you didnt mentioned anyone in the message, check if the player is in the server or else then try it again.');
 		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} what are you trying to do, man?`);
 		const context = args[0]
 		const reason = context.slice(2) || 'none';
