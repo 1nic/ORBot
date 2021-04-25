@@ -20,6 +20,8 @@ module.exports = {
 		.addField('Reason: ', [
 			reason
 		])
+		console.log(`reason: ${reason}`);
+		console.log(`arg = ${args[0]}`);
 		channel.send(embedMessage)
 
 }}
