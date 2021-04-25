@@ -1,14 +1,11 @@
-const {Client, Message, MessageEmbed} = require('discord.js');
-
-const poss = [
-    'stfu',
-    'stop it plz',
-    'are you sure about that'
-]
+const {MessageAttachment} = require('discord.js');
+const fs = require('fs')
 
 module.exports = {
     name: 'send',
     run: async(message, text) => {
-       message.channel.send(text, {files: ['commands\gay.png']})
+        const file = fs.readFileSync(path.join(__dirname, 'gay.png'));
+        const image = new MessageAttachment(file);
+        message.reply(text, image)
     }
 }
