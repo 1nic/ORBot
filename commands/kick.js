@@ -8,9 +8,7 @@ module.exports = {
 		if (!message.mentions.members.size) return message.reply('you want to kick the null?');
 		const member = message.mentions.members.first()
 		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} what are you trying to do, man?`);
-		const args = message.content.slice("or ".length).trim().split(/ +/);
-		const pre = args.join(" ").toLowerCase();
-		const context = pre.split('ann');
+		const context = args[0]
 		const reason = context.slice(3).join(' ') || 'none';
 		member.kick({ reason });
 		const channel = client.channels.cache.find(ch => ch.id === '834078274770042921');

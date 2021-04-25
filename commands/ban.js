@@ -6,10 +6,8 @@ module.exports = {
 		if (!message.mentions.members.first()) return message.reply('you want to ban the null?');
 		const member = message.mentions.members.first()
 		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} is the same/higher rank than you`);
-		const args = message.content.slice("or ".length).trim().split(/ +/);
-		const pre = args.join(" ").toLowerCase();
-		const context = pre.split('ann');
-		const reason = context.slice(2).join(' ') || 'none';
+		const context = args[0]
+		const reason = context || 'none';
 		member.ban({ reason });
         message.channel.send(`${member} were banned for ${reason}.`);
 	}
