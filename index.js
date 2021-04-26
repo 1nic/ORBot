@@ -60,7 +60,7 @@ client.on('message', function(message){
 	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
 	if (!prefixRegex.test(message.content)) return;
 	if (!message.author.id === '834495830869409843') {
-		message.channel.send(`wassup? prefix: ${prefix}, type 'or help' to help.`);
+		message.channel.send(`wassup? prefix: ${prefix}, type '${prefix} help' to help.`);
 	}
 })
 
