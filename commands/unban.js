@@ -10,6 +10,8 @@ module.exports = {
 		const bannedppl = await message.guild.fetchBans();
 		if (!bannedppl.find((user) => user.user.id === id)) return message.reply(`user is not a valid banned user`);
 		message.guild.members.unban(id);
+		const reason = args.slice(1).join(' ') || 'none';
+		const channel = client.channels.cache.find(ch => ch.id === '834078274770042921');
 		const embedMes = new MessageEmbed()
 		.setTitle(`${message.author.tag} unbanned ${member.user.tag}`)
 		.setColor('FF0000')
@@ -18,6 +20,7 @@ module.exports = {
 		.addField('Reason: ', [
 			reason
 		])
-    	message.channel.send(`the user were unbanned`);
+    	channel.send(embedMes);
+		message.channel.send("The user were unbanned.")
 	}
 };
