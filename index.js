@@ -20,7 +20,7 @@ client.once('ready', () => {
 	client.user.setPresence({
 		activity: {
 			name: 'Ben 10: Omniversal Revenge',
-			type: 'WATCHING'
+			type: 'PLAYING'
 		},
 		status: 'dnd'
 	})
