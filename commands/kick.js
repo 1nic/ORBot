@@ -7,8 +7,16 @@ module.exports = {
 		console.log(message.content);
 		if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('go get kick perms lmao');
 		const member = message.mentions.members.first()
-		if (!member) return message.reply('you didnt mentioned anyone in the message, check if the player is in the server or else then try it again.');
-		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} what are you trying to do, man?`);
+		const newEmbed = new MessageEmbed()
+		.setTitle('Kick:')
+		.setColor('RED')
+		.setThumbnail('https://cdn.discordapp.com/attachments/835130113599209473/835836212714668052/Omniversal_Administrative.png')
+		.addField('Examples:', [
+			'r kick {user} (mention the person which you wanna kick)',
+			'r kick {user} "underaged" < reason here'
+		])
+		if (!member) return message.reply(newEmbed);
+		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} the dude is a higher rank/same rank as you`);
 		const split = args.split(/ +/);
 		const reason = args[0].slice(1) || 'none';
 		member.kick({ reason });
