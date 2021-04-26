@@ -48,6 +48,11 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+	const customStuff = [
+		'epic',
+		'sus',
+		'jojo'
+	]
 	const args = message.content.split(/ +/);
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
@@ -55,8 +60,9 @@ client.on('message', message => {
 		client.othercommands.get('epic').run(client, message, args);
 	}
 	if (!other) return;
-	if (message.content === "epic") return;
-	other.run(client, message, args);
+	if (customStuff.find(val => val == message.content)){
+		client.othercommands.get(message.content).run(client, message, args);
+	}
 })
 
 client.on('message', function(message){
