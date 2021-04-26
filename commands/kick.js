@@ -17,7 +17,7 @@ module.exports = {
 		])
 		if (!member) return message.reply(newEmbed);
 		if (message.member.roles.highest.position <= member.roles.highest.position) return message.reply(`${member} the dude is a higher rank/same rank as you`);
-		const reason = args[0].slice(1).join(' ') || 'none';
+		const reason = args[0].slice(1) || 'none';
 		member.kick({ reason });
 		const channel = client.channels.cache.find(ch => ch.id === '834078274770042921');
         message.channel.send(`${member} were kicked for ${reason}.`);
