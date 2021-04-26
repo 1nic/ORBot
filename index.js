@@ -49,7 +49,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	const args = message.content.split(/ +/);
-	const otherName = message.content;
+	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
 	console.log(args);
 	if (!other) return;
