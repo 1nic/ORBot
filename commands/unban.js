@@ -1,3 +1,5 @@
+const {MessageEmbed} = require('discord.js')
+
 module.exports = {
 	name: 'unban',
 	description: 'unban',
@@ -8,6 +10,14 @@ module.exports = {
 		const bannedppl = await message.guild.fetchBans();
 		if (!bannedppl.find((user) => user.user.id === id)) return message.reply(`user is not a valid banned user`);
 		message.guild.members.unban(id);
+		const embedMes = new MessageEmbed()
+		.setTitle(`${message.author.tag} unbanned ${member.user.tag}`)
+		.setColor('FF0000')
+		.setThumbnail(message.author.displayAvatarURL({format : 'png', dynamic : true}))
+		
+		.addField('Reason: ', [
+			reason
+		])
     	message.channel.send(`the user were unbanned`);
 	}
 };
