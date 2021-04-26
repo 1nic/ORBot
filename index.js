@@ -51,7 +51,7 @@ client.on('message', message => {
 	const args = message.content.split(/ +/);
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
-	if (args.find(str => str = otherName)) return console.log('s', otherName);
+	if (args.find(str => str == otherName)){console.log(otherName, args)}
 	console.log(args);
 	if (!other) return;
 	other.run(client, message, args);
