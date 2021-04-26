@@ -52,7 +52,6 @@ client.on('message', message => {
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
 	if (args.find(str => str == 'epic')){console.log(otherName)}
-	console.log(args);
 	if (!other) return;
 	other.run(client, message, args);
 })
