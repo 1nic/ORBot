@@ -60,8 +60,8 @@ client.on('message', message => {
 		client.othercommands.get('epic').run(client, message, args);
 	}
 	if (!other) return;
-	if (args.find(val => val == message.content)){
-		client.othercommands.get(message.content).run(client, message, args);
+	if (args.find(val => val == 'sus')){
+		client.othercommands.get('sus').run(client, message, args);
 	}
 })
 
