@@ -59,10 +59,10 @@ client.on('message', message => {
 	if (args.find(str => str == customStuff[1])){
 		client.othercommands.get('epic').run(client, message, args);
 	}
-	if (args.find(str => str == customStuff[1])){
+	if (args.find(str => str == customStuff[2])){
 		client.othercommands.get('sus').run(client, message, args);
 	}
-	if (args.find(str => str == customStuff[1])){
+	if (args.find(str => str == customStuff[3])){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
 	if (!other) return;
