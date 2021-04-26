@@ -4,7 +4,6 @@ module.exports = {
 	name: 'kick',
 	description: 'kick',
 	run: async(client, message, args) =>{
-		console.log(message.content);
 		if (!message.member.permissions.has('KICK_MEMBERS')) return message.reply('go get kick perms lmao');
 		const member = message.mentions.members.first()
 		const newEmbed = new MessageEmbed()
@@ -29,8 +28,6 @@ module.exports = {
 		.addField('Reason: ', [
 			reason
 		])
-		console.log(`reason: ${reason}`);
-		console.log(`arg = ${args}`);
 		if (!reason) return;
 		channel.send(embedMessage)
 }}
