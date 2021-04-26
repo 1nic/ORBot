@@ -55,7 +55,7 @@ client.on('message', message => {
 		client.othercommands.get('epic').run(client, message, args);
 	}
 	if (!other) return;
-	if (!message.content === "epic") return;
+	if (message.content === "epic") return;
 	other.run(client, message, args);
 })
 
