@@ -57,7 +57,7 @@ client.on('message', message => {
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
 	const newval = args.map()
-	if (newval.find(str => str == 'epic')){
+	if (newval.find(str => str.toLocaleLowerCase() == 'epic')){
 		client.othercommands.get('epic').run(client, message, args);
 	}
 	if (newval.find(str => str == 'sus') || args.find(str => str == 'amongus')){
