@@ -59,10 +59,10 @@ client.on('message', message => {
 	if (args.find(str => str == 'epic')){
 		client.othercommands.get('epic').run(client, message, args);
 	}
-	if (!other) return;
 	if (args.find(val => val == 'sus')){
 		client.othercommands.get('sus').run(client, message, args);
 	}
+	if (!other) return;
 })
 
 client.on('message', function(message){
