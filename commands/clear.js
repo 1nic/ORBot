@@ -6,7 +6,7 @@ module.exports = {
         if (!args[0]) return message.reply('pls send da amount');
         if (isNaN(args[0])) return message.reply('numbers...');
         if (parseInt(args[0]) > 99) return message.reply('i cannot delete more than 99 messages.');
-        await message.channel.bulkDelete(parseInt(args[0]))
+        await message.channel.bulkDelete(parseInt(args[0]) + 1)
         .catch(error => console.log(error));
         message.reply(`deleted ${parseInt(args[0])} messages`)
     }
