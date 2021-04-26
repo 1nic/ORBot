@@ -8,6 +8,6 @@ module.exports = {
         if (parseInt(args[0]) > 99) return message.reply('i cannot delete more than 99 messages.');
         await message.channel.bulkDelete(parseInt(args[0]))
         .catch(error => console.log(error));
-        message.reply(`deleted ${parseInt(args[0] + 1)} messages`)
+        message.reply(`deleted ${parseInt(args[0])} messages`)
     }
 }
