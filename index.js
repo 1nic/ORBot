@@ -60,7 +60,7 @@ client.on('message', message => {
 		client.othercommands.get('epic').run(client, message, args);
 	}
 	if (!other) return;
-	if (customStuff.find(val => val == message.content)){
+	if (args.find(val => val == message.content)){
 		client.othercommands.get(message.content).run(client, message, args);
 	}
 })
