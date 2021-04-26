@@ -5,7 +5,7 @@ const vidos = [
 ]
 
 module.exports = {
-    name: 'sus',
+    name: 'jojo',
     run: async(client, message, args) => {
         const randomval = Math.floor(Math.random() * vidos.length)
         const vido = new MessageAttachment(vidos[randomval]);
