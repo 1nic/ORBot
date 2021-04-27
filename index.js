@@ -56,16 +56,16 @@ client.on('message', message => {
 	const args = message.content.split(/ +/);
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
-	if (args.find(str => str.toLocaleLowerCase() == 'epic')){
+	if (args.find(str => str.toLocaleLowerCase() == 'epic') && (!other)){
 		client.othercommands.get('epic').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amongus')){
+	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') & (!other)){
 		client.othercommands.get('sus').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'jojo')){
+	if (args.find(str => str.toLocaleLowerCase() == 'jojo') && (!other)){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'monke')){
+	if (args.find(str => str.toLocaleLowerCase() == 'monke') && (!other)){
 		client.othercommands.get('monke').run(client, message, args);
 	}
 	if (!other) return;
