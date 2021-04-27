@@ -48,11 +48,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	const customStuff = [
-		'epic',
-		'sus',
-		'jojo'
-	]
+	if (message.content == message.content.toUpperCase) return message.delete()
 	const args = message.content.split(/ +/);
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
