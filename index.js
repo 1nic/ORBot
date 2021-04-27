@@ -68,10 +68,8 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'monke')){
 		client.othercommands.get('monke').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'are you sure about that')){
-		client.othercommands.get('are you sure about that').run(client, message, args);
-	}
 	if (!other) return;
+	other.run(client, message, args);
 })
 
 client.on('message', function(message){
