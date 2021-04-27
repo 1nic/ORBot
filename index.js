@@ -59,10 +59,10 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'epic')){
 		client.othercommands.get('epic').run(client, message, args);
 	}
-	if (args.find(str => str == 'sus') || args.find(str => str == 'amongus')){
+	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amongus')){
 		client.othercommands.get('sus').run(client, message, args);
 	}
-	if (args.find(str => str == 'jojo')){
+	if (args.find(str => str.toLocaleLowerCase() == 'jojo')){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
 	if (!other) return;
