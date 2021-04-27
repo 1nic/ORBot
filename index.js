@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const fs = require('fs');
 client.commands = new Discord.Collection();
 client.othercommands = new Discord.Collection();
+let goal;
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const otherFiles = fs.readdirSync('./commands/others').filter(file => file.endsWith('.js'));
 
@@ -75,6 +76,12 @@ client.on('message', function(message){
 	if (!prefixRegex.test(message.content)) return;
 	if (!message.author.id === '834495830869409843') {
 		message.channel.send(`wassup? prefix: ${prefix}, type '${prefix} help' to help.`);
+	}
+})
+
+client.on('message', message => {
+	if (!goal){
+		console.log('no')
 	}
 })
 
