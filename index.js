@@ -65,6 +65,12 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'jojo')){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
+	if (args.find(str => str.toLocaleLowerCase() == 'monke')){
+		client.othercommands.get('monke').run(client, message, args);
+	}
+	if (args.find(str => str.toLocaleLowerCase() == 'are you sure about that')){
+		client.othercommands.get('are you sure about that').run(client, message, args);
+	}
 	if (!other) return;
 })
 
