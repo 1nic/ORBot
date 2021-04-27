@@ -59,7 +59,7 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'epic') && (!other)){
 		client.othercommands.get('epic').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') & (!other)){
+	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') && (!message.content === "sus")){
 		client.othercommands.get('sus').run(client, message, args);
 	}
 	if (args.find(str => str.toLocaleLowerCase() == 'jojo') && (!other)){
