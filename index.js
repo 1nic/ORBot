@@ -56,14 +56,13 @@ client.on('message', message => {
 	const args = message.content.split(/ +/);
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
-	const newval = args.map()
-	if (newval.find(str => str.toLocaleLowerCase() == 'epic')){
+	if (args.find(str => str.toLocaleLowerCase() == 'epic')){
 		client.othercommands.get('epic').run(client, message, args);
 	}
-	if (newval.find(str => str == 'sus') || args.find(str => str == 'amongus')){
+	if (args.find(str => str == 'sus') || args.find(str => str == 'amongus')){
 		client.othercommands.get('sus').run(client, message, args);
 	}
-	if (newval.find(str => str == 'jojo')){
+	if (args.find(str => str == 'jojo')){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
 	if (!other) return;
