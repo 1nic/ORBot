@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.5",
+    "reconlx": "^1.2.41"
   }
 }
