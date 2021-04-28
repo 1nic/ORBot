@@ -52,20 +52,17 @@ client.on('message', message => {
 	const args = message.content.split(/ +/);
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
-	if (args.find(str => str.toLocaleLowerCase() == 'epic') && (!other)){
+	if (args.find(str => str.toLocaleLowerCase() == 'epic') && message.member.hasPermission('MANAGE_MESSAGES')){
 		client.othercommands.get('epic').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus')){
+	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') && message.member.hasPermission('MANAGE_MESSAGES')){
 		client.othercommands.get('sus').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'jojo') && (!other)){
+	if (args.find(str => str.toLocaleLowerCase() == 'jojo') && message.member.hasPermission('MANAGE_MESSAGES')){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'monke') && (!other)){
+	if (args.find(str => str.toLocaleLowerCase() == 'monke') && message.member.hasPermission('MANAGE_MESSAGES')){
 		client.othercommands.get('monke').run(client, message, args);
-	}
-	if (args.find(str => str.toLocaleLowerCase() == 'bruno is gay') && (!other)){
-		client.othercommands.get('bruno is gay').run(client, message, args);
 	}
 	if (!other) return;
 	other.run(client, message, args);
