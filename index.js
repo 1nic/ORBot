@@ -56,13 +56,11 @@ client.on('message', message => {
 		client.othercommands.get('epic').run(client, message, args);
 	}
 	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') && message.member.hasPermission('MANAGE_MESSAGES')){
+		if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
 		client.othercommands.get('sus').run(client, message, args);
 	}
 	if (args.find(str => str.toLocaleLowerCase() == 'jojo') && message.member.hasPermission('MANAGE_MESSAGES')){
 		client.othercommands.get('jojo').run(client, message, args);
-	}
-	if (args.find(str => str.toLocaleLowerCase() == 'monke') && message.member.hasPermission('MANAGE_MESSAGES')){
-		client.othercommands.get('monke').run(client, message, args);
 	}
 	if (!other) return;
 	other.run(client, message, args);
