@@ -49,7 +49,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	const args = message.content.split(/ +/);
+	const args = message.content.split(/ +/).split('!');
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
 	if (args.find(str => str.toLocaleLowerCase() == 'epic') && message.member.hasPermission('MANAGE_MESSAGES')){
