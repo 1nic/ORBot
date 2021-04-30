@@ -49,7 +49,7 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'kishaan') && !other){
 		client.othercommands.get('kishaan').run(client, message, args);
 	}
-	if (args.find(str => str.toLocaleLowerCase() == 'ben') && args.find(str => str.toLocaleLowerCase() == '10')){
+	if (args.find(str => str.toLocaleLowerCase() == 'ben') && args.find(str => str.toLocaleLowerCase() == '10') && !other){
 		client.othercommands.get('ben 10').run(client, message, args);
 	}
 	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') && message.member.hasPermission('MANAGE_MESSAGES')){
