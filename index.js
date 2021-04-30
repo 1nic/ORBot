@@ -46,6 +46,9 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'epic') && !other){
 		client.othercommands.get('epic').run(client, message, args);
 	}
+	if (args.find(str => str.toLocaleLowerCase() == 'kishaan') && !other){
+		client.othercommands.get('kishaan').run(client, message, args);
+	}
 	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') && message.member.hasPermission('MANAGE_MESSAGES')){
 		if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
 		client.othercommands.get('sus').run(client, message, args);
