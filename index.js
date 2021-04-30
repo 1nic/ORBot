@@ -43,7 +43,7 @@ client.on('message', message => {
 	const args = message.content.split(/ +/);
 	const otherName = message.content.toLocaleLowerCase();
 	const other = client.othercommands.get(otherName);
-	if (args.find(str => str.toLocaleLowerCase() == 'epic') && message.member.hasPermission('MANAGE_MESSAGES')){
+	if (args.find(str => str.toLocaleLowerCase() == 'epic') && !other){
 		client.othercommands.get('epic').run(client, message, args);
 	}
 	if (args.find(str => str.toLocaleLowerCase() == 'sus') || args.find(str => str == 'amogus') && message.member.hasPermission('MANAGE_MESSAGES')){
