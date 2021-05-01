@@ -49,6 +49,9 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'kishaan') && !other){
 		client.othercommands.get('kishaan').run(client, message, args);
 	}
+	if (args.find(str => str.toLocaleLowerCase() == 'lala') && !other){
+		client.othercommands.get('lala').run(client, message, args);
+	}
 	if (args.find(str => str.toLocaleLowerCase() == 'zap') && !other){
 		client.othercommands.get('zap').run(client, message, args);
 	}
