@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const {MessageEmbed} = require("discord.js")
+const {MessageAttachment} = require("discord.js")
 const prefix = "r "
 const client = new Discord.Client();
 const fs = require('fs');
@@ -85,7 +85,7 @@ client.on('message', message => {
 client.on('message', function(message){
 	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
 	if (!prefixRegex.test(message.content)) return;
-	const file = new MessageEmbed('https://cdn.discordapp.com/attachments/827255229967237133/839524649934258226/video0.mp4')
+	const file = new MessageAttachment('https://cdn.discordapp.com/attachments/827255229967237133/839524649934258226/video0.mp4')
 	message.channel.send(`prefix: ${prefix}, type '${prefix} help' to help.`);
 	message.channel.send(file)
 })
