@@ -68,6 +68,9 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'ramen') && args.find(str => str.toLocaleLowerCase() == 'joke') && !other){
 		client.othercommands.get('ramen joke').run(client, message, args);
 	}
+	if (args.find(str => str.toLocaleLowerCase() == 'real') && args.find(str => str.toLocaleLowerCase() == 'pickle') && !other){
+		client.othercommands.get('real pickle').run(client, message, args);
+	}
 	if (args.find(str => str.toLocaleLowerCase() == 'n word') && !other){
 		client.othercommands.get('n word').run(client, message, args);
 	}
