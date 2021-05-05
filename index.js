@@ -85,11 +85,9 @@ client.on('message', message => {
 client.on('message', function(message){
 	const prefixRegex = new RegExp(`<@!?${'834495830869409843'}>`);
 	if (!prefixRegex.test(message.content)) return;
-	if (!message.author.id === '834495830869409843') {
-		const file = new MessageEmbed('https://cdn.discordapp.com/attachments/827255229967237133/839524649934258226/video0.mp4')
-		message.channel.send(`prefix: ${prefix}, type '${prefix} help' to help.`);
-		message.channel.send(file)
-	}
+	const file = new MessageEmbed('https://cdn.discordapp.com/attachments/827255229967237133/839524649934258226/video0.mp4')
+	message.channel.send(`prefix: ${prefix}, type '${prefix} help' to help.`);
+	message.channel.send(file)
 })
 
 client.login(process.env.token);
