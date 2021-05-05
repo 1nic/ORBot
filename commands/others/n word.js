@@ -7,6 +7,7 @@ const vidos = [
 module.exports = {
     name: 'n word',
     run: async(client, message, args) => {
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
         const randomval = Math.floor(Math.random() * vidos.length)
         const vido = new MessageAttachment(vidos[randomval]);
         message.channel.send(vido)
