@@ -78,7 +78,9 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'jojo') && message.member.hasPermission('MANAGE_MESSAGES')){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
-	if (!other) return;
+	if (!other){
+		client.othercommands.get('fok u').run(client, message, args);
+	};
 	other.run(client, message, args);
 })
 
