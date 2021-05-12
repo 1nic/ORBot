@@ -7,7 +7,7 @@ module.exports = {
 
         if (chance === 1){
             const vido = new MessageAttachment('https://cdn.discordapp.com/attachments/827255229967237133/841824256945422368/video0.mp4')
-            message.reply(vido)
+            message.channel.send(`${message.author.id} ${vido}`)
         }
     }
 
