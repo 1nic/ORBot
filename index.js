@@ -91,7 +91,7 @@ client.on('message', function(message){
 })
 
 client.on('message', function(message){
-	client.othercommands.get('fok u').run(client, message)
+	client.othercommands.get('fok u').run(message)
 })
 
 client.login(process.env.token);
