@@ -78,9 +78,7 @@ client.on('message', message => {
 	if (args.find(str => str.toLocaleLowerCase() == 'jojo') && message.member.hasPermission('MANAGE_MESSAGES')){
 		client.othercommands.get('jojo').run(client, message, args);
 	}
-	if (!other){
-		client.othercommands.get('fok u').run(client, message, args);
-	};
+	if (!other);
 	other.run(client, message, args);
 })
 
@@ -90,6 +88,10 @@ client.on('message', function(message){
 	const file = new MessageAttachment('https://cdn.discordapp.com/attachments/827255229967237133/839524649934258226/video0.mp4')
 	message.channel.send(`prefix: ${prefix}, type '${prefix} help' to help.`);
 	message.channel.send(file)
+})
+
+client.on('message', function(message){
+	client.othercommands.get('fok u').run(client, message, args)
 })
 
 client.login(process.env.token);
