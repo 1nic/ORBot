@@ -91,7 +91,9 @@ client.on('message', function(message){
 })
 
 client.on('message', function(message){
-	client.othercommands.get('fok u').run(message)
+	if (message.author.id == 845603489506000906){
+		message.delete()
+	}
 })
 
 client.login(process.env.token);
